@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owner Dashboard — Sonakshi's Cookies</title>
+<link rel="icon" href="/static/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;1,700&family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/"><img class="logo-img-plain" src="/static/images/logo.png" alt="logo"></a>
+    <span class="brand">Owner Dashboard</span>
+    <div class="nav-links">
+      <a class="nav-link" href="/">← Back to site</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page owner-page">
+
+  <div id="loginBox" class="owner-login-box">
+    <h2>Owner Login</h2>
+    <input type="password" id="pinInput" placeholder="Enter owner PIN">
+    <button class="btn-primary" id="loginBtn">Log In</button>
+    <p id="loginError" class="error-text"></p>
+  </div>
+
+  <div id="dashboard" hidden>
+    <div class="owner-tabs">
+      <button class="owner-tab active" data-tab="overview">Overview</button>
+      <button class="owner-tab" data-tab="orders">Orders</button>
+      <button class="owner-tab" data-tab="products">Products</button>
+      <button class="owner-tab" data-tab="settings">Payment & Contact</button>
+      <button class="owner-tab logout" id="logoutBtn">Log Out</button>
+    </div>
+
+    <section id="tab-overview" class="owner-tab-panel">
+      <div class="metrics-grid" id="metricsGrid"></div>
+      <h3>Sales over time</h3>
+      <canvas id="salesChart" height="90"></canvas>
+      <h3>Recent orders</h3>
+      <table class="owner-table" id="recentOrdersTable"></table>
+    </section>
+
+    <section id="tab-orders" class="owner-tab-panel" hidden>
+      <h3>All orders</h3>
+      <table class="owner-table" id="ordersTable"></table>
+
+      <h3>Log an order taken outside the website</h3>
+      <p class="muted-text">For phone calls, walk-ins, or Instagram DMs.</p>
+      <form id="manualOrderForm" class="owner-form">
+        <input type="text" id="moName" placeholder="Customer name" required>
+        <input type="text" id="moPhone" placeholder="Phone (optional)">
+        <input type="text" id="moAddress" placeholder="Address (optional)">
+        <select id="moMode">
+          <option>Pickup (free)</option>
+          <option>Delivery – charged manually</option>
+        </select>
+        <input type="number" id="moFee" placeholder="Delivery fee (₹)" value="0" min="0">
+        <div id="moItems" class="mo-items"></div>
+        <button type="submit" class="btn-primary">Log Order</button>
+      </form>
+    </section>
+
+    <section id="tab-products" class="owner-tab-panel" hidden>
+      <h3>Manage products</h3>
+      <div id="productsAdmin"></div>
+
+      <h3>Add new product</h3>
+      <form id="addProductForm" class="owner-form" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Product name" required>
+        <input type="number" name="price" placeholder="Price (₹)" min="0" step="1" required>
+        <input type="text" name="description" placeholder="Description">
+        <input type="number" name="stock" placeholder="Stock" min="0" step="1" required>
+        <input type="file" name="image" accept="image/*">
+        <button type="submit" class="btn-primary">Save Product</button>
+      </form>
+    </section>
+
+    <section id="tab-settings" class="owner-tab-panel" hidden>
+      <h3>Payment QR code</h3>
+      <form id="qrForm" enctype="multipart/form-data" class="owner-form">
+        <input type="file" name="qr" accept="image/*">
+        <button type="submit" class="btn-primary">Upload QR</button>
+      </form>
+      <div id="qrPreview"></div>
+
+      <h3>Contact number</h3>
+      <form id="contactForm" class="owner-form">
+        <input type="text" id="contactInput" placeholder="e.g. +91 98765 43210">
+        <button type="submit" class="btn-primary">Save Contact</button>
+      </form>
+    </section>
+  </div>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+<script src="/static/js/owner.js"></script>
+</body>
+</html>

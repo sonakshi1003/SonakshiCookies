@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonakshi's Cookies — Small-batch cookies, Bengaluru</title>
+<link rel="icon" href="/static/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;1,700&family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <button class="logo-btn" id="logoBtn" aria-label="Go to home">
+      <img src="/static/images/logo.png" alt="Sonakshi's Cookies logo">
+    </button>
+    <span class="brand">Sonakshi's Cookies</span>
+    <div class="nav-links">
+      <button class="nav-link" data-page="home">Home</button>
+      <button class="nav-link" data-page="shop">Shop</button>
+      <button class="nav-link" data-page="cart">Cart <span id="cartCount" class="cart-badge">0</span></button>
+      <a class="nav-link" href="/owner">Owner</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HOME PAGE ============ -->
+<main id="page-home" class="page">
+
+  <section class="hero">
+    <div class="hero-left">
+      <span class="eyebrow">Small-Batch · Homemade · Bengaluru</span>
+      <h1>Cookies made with a little extra <span class="accent">love.</span></h1>
+      <p>Freshly baked cookies made in small batches, packed with care, and made to make someone's day a little sweeter.</p>
+      <button class="btn-primary" id="shopCta">Shop the Cookies →</button>
+      <p class="hero-subtext">Freshly baked every week · Bengaluru</p>
+    </div>
+    <div class="hero-right">
+      <div id="cookie-canvas-wrap">
+        <canvas id="cookie-canvas"></canvas>
+      </div>
+      <span class="deco deco-heart">♡</span>
+      <span class="deco deco-star">✦</span>
+      <span class="deco deco-crumb">•</span>
+    </div>
+  </section>
+
+  <section class="trustbar">
+    <div class="trust-item"><span class="ic">🍪</span><b>Small Batch</b><p>Made fresh in limited quantities</p></div>
+    <div class="trust-item"><span class="ic">✨</span><b>Freshly Baked</b><p>Prepared for your weekly order</p></div>
+    <div class="trust-item"><span class="ic">📦</span><b>Packed With Care</b><p>Every box is prepared personally</p></div>
+    <div class="trust-item"><span class="ic">🐾</span><b>Give Back</b><p>20% of monthly revenue supports local animal shelters</p></div>
+  </section>
+
+  <section class="steps-section fade-in">
+    <div class="steps-eyebrow">The Simple Process</div>
+    <h2 class="steps-title">A little treat, three easy <span class="accent">steps.</span></h2>
+    <div class="steps-grid">
+      <div class="step-card"><div class="stepnum">01</div><h4>Choose your cookies</h4><p>Browse the menu and build your box.</p></div>
+      <div class="step-card"><div class="stepnum">02</div><h4>Place your order</h4><p>Choose pickup or delivery and complete checkout.</p></div>
+      <div class="step-card"><div class="stepnum">03</div><h4>Get your cookies</h4><p>Orders are freshly baked and prepared for pickup or delivery.</p></div>
+    </div>
+  </section>
+
+  <section class="banner fade-in">
+    <img src="/static/images/nutella_stuffed.jpeg" alt="Nutella stuffed cookies">
+    <div class="banner-text">
+      <span class="eyebrow2">Made fresh every week</span>
+      <h3>Soft, gooey <span class="accent">Nutella</span><br>stuffed cookies.</h3>
+      <p>Every cookie is baked to order with a molten Nutella centre and golden, crackly edges.</p>
+    </div>
+  </section>
+
+  <section class="about-section fade-in">
+    <div class="about-img"><img src="/static/images/packaging.jpeg" alt="Packaging"></div>
+    <div class="about-text">
+      <span class="eyebrow2">A Little About Us</span>
+      <h2>More than just <span class="accent">cookies.</span></h2>
+      <p>Sonakshi's Cookies is a small personal baking business focused on fresh cookies, thoughtful packaging, and giving back through animal-shelter donations. Every box is mixed, scooped, and baked by hand in Bengaluru — no big batches, no shortcuts.</p>
+      <div class="signature">Sonakshi ♡</div>
+    </div>
+  </section>
+
+  <section class="note-split fade-in">
+    <div class="note-img-wrap"><span class="placeholder-icon">🍪</span></div>
+    <div class="note-text">
+      <span class="eyebrow2">A Note From Sonakshi</span>
+      <h3>I bake because it makes me <span class="accent">happy.</span></h3>
+      <p>This bakery started small — no grand plan, just a love for baking and a soft spot for animals that I could never quite separate from each other.</p>
+      <p>Every order that comes through this site helps keep both of those things going: another batch of cookies, and a small monthly donation to shelters that could really use it.</p>
+      <p>I can't promise it makes a huge difference. But even a little difference, in even one animal's life, feels worth trying for.</p>
+      <div class="note-signature">Sonakshi</div>
+    </div>
+  </section>
+
+  <section class="impact-section fade-in">
+    <span class="eyebrow2">Give Back</span>
+    <h2>A cookie that gives <span class="accent">back.</span></h2>
+    <div class="impact-stat">20%</div>
+    <div class="impact-caption">OF MONTHLY REVENUE DONATED</div>
+    <p>20% of each month's revenue is donated to local animal shelters at the end of the month.</p>
+    <div class="paw-row">🐾 🐾 🐾</div>
+  </section>
+
+  <section class="section-title fade-in">
+    <h2>Good to know</h2>
+    <p>Quick answers before you order</p>
+  </section>
+  <section class="faq fade-in" id="faqSection"></section>
+
+  <section class="allergy-box fade-in">
+    <h2>Allergy information</h2>
+    <p>Sonakshi's Cookies is not a nut-free, dairy-free, egg-free, gluten-free, or allergen-free kitchen.</p>
+    <p>Cookies may contain or come into contact with common allergens including wheat, dairy, eggs, soy, and tree nuts. Nutella Stuffed Cookies may contain hazelnuts.</p>
+    <p>If you have a severe allergy, please contact us before placing an order.</p>
+  </section>
+
+  <section class="care-split fade-in">
+    <div class="care-img"><img src="/static/images/packaging.jpeg" alt="Packed with care"><img class="care-badge" src="/static/images/logo.png" alt="logo badge"></div>
+    <div class="care-panel">
+      <span class="eyebrow2">Packed With Care</span>
+      <h3>Every box is packed with <span class="accent">care.</span></h3>
+      <p>Each box is prepared fresh for the customer's pickup or delivery day.</p>
+      <button class="btn-pill" id="careOrderBtn">Order Now →</button>
+    </div>
+  </section>
+
+  <footer class="footer-note" id="footerNote">Made fresh in Bengaluru 🍪 · Sonakshi's Cookies</footer>
+</main>
+
+<!-- ============ SHOP PAGE ============ -->
+<main id="page-shop" class="page" hidden>
+  <section class="section-title">
+    <h2>The Cookie Menu</h2>
+    <p>Pick your favourites. We'll handle the rest.</p>
+  </section>
+  <div id="orderWindowNotice"></div>
+  <div class="shop-controls">
+    <input type="text" id="searchInput" placeholder="Search cookies...">
+    <select id="sortSelect">
+      <option value="none">Featured</option>
+      <option value="price_asc">Price: Low → High</option>
+      <option value="price_desc">Price: High → Low</option>
+      <option value="name_asc">Name: A → Z</option>
+    </select>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+</main>
+
+<!-- ============ CART PAGE ============ -->
+<main id="page-cart" class="page" hidden>
+  <section class="section-title"><h2>Your Cart</h2></section>
+  <div id="cartContent"></div>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="/static/js/cookie3d.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
